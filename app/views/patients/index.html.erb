@@ -24,7 +24,7 @@
         <td><%= patient.Glycemie %></td>
         <td><%= link_to 'Fiche Patient', patient, class:"waves-effect waves-light btn" %></td>
         <td><%= link_to 'Editer', edit_patient_path(patient), class:"waves-effect waves-light btn" %></td>
-        <td><%= link_to 'Supprimer', patient, class:"waves-effect waves-light btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Supprimer', patient, class:"waves-effect waves-light btn", method: :delete, data: { confirm: 'Etes-vous sur ?' } %></td>
 
       </tr>
     <% end %>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Patient',new_patient_path, class:"waves-effect waves-light btn"  %>
+<%= link_to 'Nouveau Patient',new_patient_path, class:"waves-effect waves-light btn"  %>
