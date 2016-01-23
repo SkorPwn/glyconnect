@@ -1,0 +1,49 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+  <div class="field input-field col s6">
+  <i class="material-icons prefix">account_circle</i>
+    <%= f.label :Nom %><br>
+    <%= f.text_field :Nom, class: "validate"%>
+  </div>
+  <div class="field input-field col s6">
+  <i class="material-icons prefix">account_circle</i>
+    <%= f.label :Prenom %><br>
+    <%= f.text_field :Prenom %>
+  </div>
+  <div class="field input-field">
+      <i class="material-icons prefix">location_on</i>
+    <%= f.label :Adresse %><br>
+    <%= f.text_field :Adresse %>
+  </div>
+  <div class="field input-field col s6">
+    <i class="material-icons prefix">phone</i>
+    <%= f.label :Téléphone %><br>
+    <%= f.text_field :Telephone %>
+  </div>
+  <div class="field input-field col s6">
+    <%= f.label :Glycemie %><br>
+    <%= f.text_field :Glycemie %>
+  </div>
+  <div class="actions">
+    <%= f.submit class:"waves-effect waves-light btn" %> 
+
+
+  </button>
+        
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Patients</h1>
+
+<table class ="centered highlight responsive-table">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+      <th>Glycemie</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.Nom %></td>
+        <td><%= patient.Prenom %></td>
+        <td><%= patient.Adresse %></td>
+        <td><%= patient.Telephone %></td>
+        <td><%= patient.Glycemie %></td>
+        <td><%= link_to 'Fiche Patient', patient, class:"waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Editer', edit_patient_path(patient), class:"waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Supprimer', patient, class:"waves-effect waves-light btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient',new_patient_path, class:"waves-effect waves-light btn"  %>

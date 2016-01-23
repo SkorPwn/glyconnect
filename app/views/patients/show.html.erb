@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @patient.Nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @patient.Prenom %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @patient.Adresse %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @patient.Telephone %>
+</p>
+
+<p>
+  <strong>Glycemie:</strong>
+  <%= @patient.Glycemie %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient), class:"waves-effect waves-light btn" %> |
+<%= link_to 'Back', patients_path, class:"waves-effect waves-light btn" %>
