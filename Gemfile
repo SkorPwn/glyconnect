@@ -47,3 +47,5 @@ group :development do
 end
 
 gem 'devise'
+gem 'materialize-sass' 
+gem 'chartjs-ror'

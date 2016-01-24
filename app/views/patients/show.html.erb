@@ -1,29 +1,284 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @patient.Nom %>
-</p>
 
-<p>
-  <strong>Prenom:</strong>
-  <%= @patient.Prenom %>
-</p>
+<h2>
 
-<p>
-  <strong>Adresse:</strong>
-  <%= @patient.Adresse %>
-</p>
+  <%= @patient.Nom %>   <%= @patient.Prenom %>
+</h2>
 
-<p>
-  <strong>Telephone:</strong>
-  <%= @patient.Telephone %>
-</p>
 
-<p>
-  <strong>Glycemie:</strong>
-  <%= @patient.Glycemie %>
-</p>
 
-<%= link_to 'Editer', edit_patient_path(@patient), class:"waves-effect waves-light btn" %> |
+                  <ul ref="accordeon" class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header"><i class="fa fa-info-circle"></i>Informations du patient</div>
+       <div class="collapsible-body">
+       <div class="row">
+                <div class=" col s8">
+                  <p>
+                  <strong>Nom:</strong>
+                  <%= @patient.Nom %>
+
+                <br>
+
+                  <strong>Prénom:</strong>
+                  <%= @patient.Prenom %>
+
+                <br>
+
+                <strong>Age:</strong>
+                  <%= @patient.age %>
+
+                <br>
+                <strong>Sexe:</strong>
+                  <%= @patient.sexe %>
+
+                <br>
+                <strong>Poids:</strong>
+                  <%= @patient.poids %>
+
+                <br>
+
+                  <strong>Adresse:</strong>
+                  <%= @patient.Adresse %>
+
+                <br>
+
+                  <strong>Téléphone:</strong>
+                  <%= @patient.Telephone %>
+
+
+                <br>
+                  <strong>Identifiant:</strong>
+                  <%= @patient.Glycemie %>
+                </p>
+                </div>
+
+
+
+     </div>
+
+      </div>
+
+
+
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="fa fa-calendar"></i>Prochain rendez-vous</div>
+      <div class="collapsible-body">
+
+          <div class="row">
+                    <div class=" col s4">
+                      <p>
+                      Votre prochain rendez vous est le : 12 février
+                     </p>
+                    </div>
+
+                    <div class=" col s3">
+                    <br>
+
+                                          <!-- Modal Trigger -->
+                                 <button  class="btn modal-trigger">Modifier</button>
+                                 <button  class="btn modal-trigger">Nouveau</button>
+
+
+          
+                    </div>
+
+
+
+         </div>   
+
+      <div>
+    </li>
+
+
+
+      
+    </li>
+
+
+   </div>
+
+
+
+
+
+<br><br>
+<!-- tabs-->
+<div class="container">
+<h3 class = "center-align">Suivi de glycémie du patient</h3>
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s2"><a href="#g1">20/02/2016</a></li>
+        <li class="tab col s2"><a href="#g2">21/02/2016</a></li>
+        <li class="tab col s2"><a href="#g3">22/02/2016</a></li>
+        <li class="tab col s2"><a href="#g4">23/02/2016</a></li>
+        <li class="tab col s2"><a href="#g5">24/02/2016</a></li>
+        <li class="tab col s2"><a class="active" href="#g6">25/02/2016</a></li>
+
+
+      </ul>
+<br>
+
+
+    </div>
+    <div id="g1" class="col s12"><canvas id="glycemie1" class="col s12"></canvas></div>
+    <div id="g2" class="col s12"><canvas id="glycemie2" class="col s12"></canvas></div>
+    <div id="g3" class="col s12"><canvas id="glycemie3" class="col s12"></canvas></div>
+    <div id="g4" class="col s12"><canvas id="glycemie4" class="col s12"></canvas></div>
+    <div id="g5" class="col s12"><canvas id="glycemie5" class="col s12"></canvas></div>
+    <div id="g6" class="col s12"><canvas id="glycemie6" class="col s12"></canvas></div>
+
+  </div>
+
+</div>
+
+
+
+<div class="container">
+
+        <!-- line chart canvas element -->
+                    <div class="row">
+                              
+
+                    </div>
+
+
+</div>
+
+
+
+
+
+  <br><br>
+<div class="container">
 <%= link_to 'Retour', patients_path, class:"waves-effect waves-light btn" %>
+</div>
+
+
+
+
+
+
+
+                  <!--glycemie 1 -->
+                    <script>
+                  // line chart data
+                      var glycemie1Data = {
+                          labels : ["00h00","02h00","04h00","06h00","08h00","10h00","12h00","14h00","16h00","18h00","20h00","22h00"],
+                          datasets : [
+                          {
+                              fillColor : "rgba(238,110,115,0.2)",
+                              strokeColor : "#ee6e73",
+                              pointColor : "#fff",
+                              pointStrokeColor : "#4db6ac",
+                              data : [0.85,0.825,0.70,0.65,1.15,0.95,0.8,1.25,1.1,1,1.2,1.1,0.95]
+                          }
+                      ]
+                      }
+                      // get line chart canvas
+                      var glycemie1 = document.getElementById('glycemie1').getContext('2d');
+                      // draw line chart
+                      new Chart(glycemie1).Line(glycemie1Data);
+                      </script>
+
+                                        <!--glycemie 2 -->
+                    <script>
+                  // line chart data
+                      var glycemie2Data = {
+                          labels : ["00h00","02h00","04h00","06h00","08h00","10h00","12h00","14h00","16h00","18h00","20h00","22h00"],
+                          datasets : [
+                          {
+                              fillColor : "rgba(238,110,115,0.2)",
+                              strokeColor : "#ee6e73",
+                              pointColor : "#fff",
+                              pointStrokeColor : "#4db6ac",
+                              data : [0.9,0.85,0.85,0.8,0.75,1.4,1.35,1.25,1,0.9,1.3,1.25]
+                          }
+                      ]
+                      }
+                      // get line chart canvas
+                      var glycemie2 = document.getElementById('glycemie2').getContext('2d');
+                      // draw line chart
+                      new Chart(glycemie2).Line(glycemie2Data);
+                      </script>
+                                        <!--glycemie 3 -->
+                    <script>
+                  // line chart data
+                      var glycemie3Data = {
+                          labels : ["00h00","02h00","04h00","06h00","08h00","10h00","12h00","14h00","16h00","18h00","20h00","22h00"],
+                          datasets : [
+                          {
+                              fillColor : "rgba(238,110,115,0.2)",
+                              strokeColor : "#ee6e73",
+                              pointColor : "#fff",
+                              pointStrokeColor : "#4db6ac",
+                              data : [0.75,0.72,0.7,0.67,1.2,0.9,0.8,1.2,1.25,0.9,1.2,1.15]
+                          }
+                      ]
+                      }
+                      // get line chart canvas
+                      var glycemie3 = document.getElementById('glycemie3').getContext('2d');
+                      // draw line chart
+                      new Chart(glycemie3).Line(glycemie3Data);
+                      </script>
+                                        <!--glycemie 4 -->
+                    <script>
+                  // line chart data
+                      var glycemie4Data = {
+                          labels : ["00h00","02h00","04h00","06h00","08h00","10h00","12h00","14h00","16h00","18h00","20h00","22h00"],
+                          datasets : [
+                          {
+                              fillColor : "rgba(238,110,115,0.2)",
+                              strokeColor : "#ee6e73",
+                              pointColor : "#fff",
+                              pointStrokeColor : "#4db6ac",
+                              data : [0.9,0.8,0.75,1.1,1.25,1,0.9,0.8,1.15,0.9,0.85,1.1]
+                          }
+                      ]
+                      }
+                      // get line chart canvas
+                      var glycemie4 = document.getElementById('glycemie4').getContext('2d');
+                      // draw line chart
+                      new Chart(glycemie4).Line(glycemie4Data);
+                      </script>
+                                        <!--glycemie 5 -->
+                    <script>
+                  // line chart data
+                      var glycemie5Data = {
+                          labels : ["00h00","02h00","04h00","06h00","08h00","10h00","12h00","14h00","16h00","18h00","20h00","22h00"],
+                          datasets : [
+                          {
+                              fillColor : "rgba(238,110,115,0.2)",
+                              strokeColor : "#ee6e73",
+                              pointColor : "#fff",
+                              pointStrokeColor : "#4db6ac",
+                              data : [0.9,0.8,0.75,0.7,0.6,1.3,1.1,1.15,0.9,1.25,1.19,1.2]
+                          }
+                      ]
+                      }
+                      // get line chart canvas
+                      var glycemie5 = document.getElementById('glycemie5').getContext('2d');
+                      // draw line chart
+                      new Chart(glycemie5).Line(glycemie5Data);
+                      </script>
+                                        <!--glycemie 6 -->
+                    <script>
+                  // line chart data
+                      var glycemie6Data = {
+                          labels : ["00h00","02h00","04h00","06h00","08h00","10h00","12h00","14h00","16h00","18h00","20h00","22h00"],
+                          datasets : [
+                          {
+                              fillColor : "rgba(238,110,115,0.2)",
+                              strokeColor : "#ee6e73",
+                              pointColor : "#fff",
+                              pointStrokeColor : "#4db6ac",
+                              data : [0.9,0.8,0.75,0.7,1.1,0.9,0.8,1.15,1,0.9,1.1,1]
+                          }
+                      ]
+                      }
+                      // get line chart canvas
+                      var glycemie6 = document.getElementById('glycemie6').getContext('2d');
+                      // draw line chart
+                      new Chart(glycemie6).Line(glycemie6Data);
+                      </script>

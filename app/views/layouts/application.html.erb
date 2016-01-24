@@ -11,10 +11,32 @@
     <!-- Compiled and minified CSS -->
 
 <link type="text/css" rel="stylesheet" href="app/assets/stylesheets/css/materialize.min.css"  media="screen,projection"/>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Compiled and minified JavaScript -->
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+   
+      <!-- Chart -->
+<script src='Chart.min.js'></script>
+
+
+<script type="text/javascript"> 
+      $(document).ready( function() {
+        $('#alerte').delay(1800).fadeOut();
+      });
+    </script>
+
+
+
+<script type="text/javascript"> 
+ $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+   </script>
 
 </head>
 <body>
@@ -23,11 +45,13 @@
 
 
       <div class="container">
+<br>
 
-      
-     	  <p class="notice"><%= notice %></p>
-    	   <p class="alert"><%= alert %></p>
-
+      <div class="alerte col s8" id="alerte">
+           	  <p class="notice "><%= notice %></p>
+    	        <p class="alert"><%= alert %></p>
+      </div>
+<br>
 					<%= yield %>
 
       </div>
@@ -39,5 +63,6 @@
    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
 </body>
 </html>

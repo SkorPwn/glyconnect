@@ -1,12 +1,22 @@
 
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">Glyconnect</a>
       
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/pages/accueil">Accueil</a></li>
         <li><a href="/pages/patients">Tableau de bord</a></li>
         <li><a href="/patients">Patients</a></li>
+
+
+          <% if user_signed_in? %>
+    <li><%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete , class:"waves-effect waves-light btn" %>
+
+          <% else %>
+        <li><%= link_to "Créer un Compte",  new_user_registration_path, class:"waves-effect waves-light btn" %></li>
+
+      <% end %>
+	
       </ul>
  
     </div>

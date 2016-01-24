@@ -14,36 +14,63 @@
 
 
 
+<div class="row">
 
   <div class="field input-field col s6">
   <i class="material-icons prefix">account_circle</i>
-    <%= f.label :Nom %><br>
+    <%= f.label :Nom %>
     <%= f.text_field :Nom, class: "validate"%>
   </div>
+
   <div class="field input-field col s6">
   <i class="material-icons prefix">account_circle</i>
-    <%= f.label :Prenom %><br>
+    <%= f.label :Prenom %>
     <%= f.text_field :Prenom %>
   </div>
-  <div class="field input-field">
+
+
+
+
+
+  <div class="field input-field col s6">
       <i class="material-icons prefix">location_on</i>
-    <%= f.label :Adresse %><br>
+    <%= f.label :Adresse %>
     <%= f.text_field :Adresse %>
   </div>
+
   <div class="field input-field col s6">
     <i class="material-icons prefix">phone</i>
-    <%= f.label :Téléphone %><br>
+    <%= f.label :Téléphone %>
     <%= f.text_field :Telephone %>
   </div>
+
   <div class="field input-field col s6">
-    <%= f.label :Glycemie %><br>
+    <i class="material-icons prefix">perm_identity</i>
+    <%= f.label :Sexe %>
+    <%= f.text_field :sexe %>
+  </div>
+
+  <div class="field input-field col s6">
+     <i class="material-icons prefix">perm_contact_calendar</i>
+    <%= f.label :Age %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="field input-field col s6">
+    <i class="material-icons prefix">assignment_ind</i>
+    <%= f.label :Poids %>
+    <%= f.text_field :poids %>
+  </div>
+
+  <div class="field input-field col s6">
+   <i class="material-icons prefix">vpn_key</i>
+    <%= f.label :Identifiant %>
     <%= f.text_field :Glycemie %>
   </div>
+
   <div class="actions">
     <%= f.submit class:"waves-effect waves-light btn" %> 
-
-
-  </button>
-        
+ 
+         </div> 
   </div>
 <% end %>

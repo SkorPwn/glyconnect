@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /patients
   # GET /patients.json
@@ -69,6 +70,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:Nom, :Prenom, :Adresse, :Telephone, :Glycemie)
+      params.require(:patient).permit(:Nom, :Prenom, :Adresse, :Telephone, :poids, :age, :sexe, :Glycemie)
     end
 end

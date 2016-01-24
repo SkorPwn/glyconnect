@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'accueil/Patients'
 
-  root 'pages#accueil'
+root 'pages#accueil'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
